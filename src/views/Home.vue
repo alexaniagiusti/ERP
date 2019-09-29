@@ -153,14 +153,14 @@
         </v-list-item>
        <v-divider :inset="inset"></v-divider>
       
-       <v-list-item @click="" class="mt-5">
+       <v-list-item  class="mt-5">
           <v-icon class="mr-5">help</v-icon>
           <v-list-item-content>
             <v-list-item-title class="menuAtivo">Ajuda</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
-       <v-list-item @click="">
+       <v-list-item>
           <v-icon class="mr-5">crop_rotate</v-icon>
           <v-list-item-content>
             <v-list-item-title class="menuAtivo">Trocar Conta</v-list-item-title>
