@@ -1,35 +1,19 @@
 <template>
   <div>
-
-  <v-app-bar
-      app
-      clipped-left
-      dark
-    >
+    <v-app-bar app clipped-left dark>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <span class="title ml-3 mr-5">Wikilore&nbsp;<span class="font-weight-light">ERP</span></span>
+      <span class="title ml-3 mr-5">
+        Wikilore&nbsp;
+        <span class="font-weight-light">ERP</span>
+      </span>
       <v-spacer></v-spacer>
-        <v-text-field
-          solo-inverted
-          flat
-          hide-details
-          label="Pesquisar"
-          prepend-inner-icon="search"
-        ></v-text-field>
-        <v-spacer></v-spacer>
-          <span>Alexânia Giusti</span>
+      <v-text-field solo-inverted flat hide-details label="Pesquisar" prepend-inner-icon="search"></v-text-field>
+      <v-spacer></v-spacer>
+      <span>Alexânia Giusti</span>
     </v-app-bar>
 
-    <v-navigation-drawer
-      v-model="drawer"
-      app
-      clipped
-      width="300"
-      dark
-    >
-       <v-list
-        dense rounded
-      >
+    <v-navigation-drawer v-model="drawer" app clipped width="300" dark>
+      <v-list dense rounded>
         <v-list-group prepend-icon="person" no-action>
           <template v-slot:activator>
             <v-list-item-content>
@@ -37,7 +21,7 @@
             </v-list-item-content>
           </template>
 
-          <v-list-item to="/home/cadastros"> 
+          <v-list-item to="/home/cadastros">
             <v-list-item-content>
               <v-list-item-title class="menuAtivo">Cadastrados</v-list-item-title>
             </v-list-item-content>
@@ -51,19 +35,19 @@
             </v-list-item-content>
           </template>
 
-          <v-list-item to="/home/mesa"> 
+          <v-list-item to="/home/mesa">
             <v-list-item-content>
               <v-list-item-title class="menuAtivo">Controle de Mesas</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
-          <v-list-item to="/home/comanda"> 
+          <v-list-item to="/home/comanda">
             <v-list-item-content>
               <v-list-item-title class="menuAtivo">Controle de Comandas</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
-          <v-list-item to="/home/motoboy"> 
+          <v-list-item to="/home/motoboy">
             <v-list-item-content>
               <v-list-item-title class="menuAtivo">Controle de Motoboy</v-list-item-title>
             </v-list-item-content>
@@ -101,7 +85,7 @@
             </v-list-item-content>
           </template>
 
-          <v-list-item to="/home/cadastroclientes">
+          <v-list-item to="/home/clientes/listar">
             <v-list-item-content>
               <v-list-item-title class="menuAtivo">Clientes</v-list-item-title>
             </v-list-item-content>
@@ -110,7 +94,7 @@
             <v-list-item-content>
               <v-list-item-title class="menuAtivo">Colaboradores</v-list-item-title>
             </v-list-item-content>
-          </v-list-item >
+          </v-list-item>
           <v-list-item to="/home/cadastroprodutos">
             <v-list-item-content>
               <v-list-item-title class="menuAtivo">Produtos</v-list-item-title>
@@ -131,17 +115,17 @@
               <v-list-item-title class="menuAtivo">Promoções</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item to="/home/cadastrobairros">
+          <v-list-item @click="$router.push({ name: 'listar bairros' })">
             <v-list-item-content>
               <v-list-item-title class="menuAtivo">Bairros</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list-group>
 
-         <v-list-item to="/home/controleestoque">
+        <v-list-item to="/home/controleestoque">
           <v-icon class="mr-5">all_inbox</v-icon>
           <v-list-item-content>
-            <v-list-item-title  class="pa-3 menuAtivo">Controle de Estoque</v-list-item-title>
+            <v-list-item-title class="pa-3 menuAtivo">Controle de Estoque</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -151,61 +135,60 @@
             <v-list-item-title class="pa-3 menuAtivo">Relatórios</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-       <v-divider :inset="inset"></v-divider>
-      
-       <v-list-item  class="mt-5">
+        <v-divider></v-divider>
+
+        <v-list-item class="mt-5">
           <v-icon class="mr-5">help</v-icon>
           <v-list-item-content>
             <v-list-item-title class="menuAtivo">Ajuda</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
-       <v-list-item>
+        <v-list-item>
           <v-icon class="mr-5">crop_rotate</v-icon>
           <v-list-item-content>
             <v-list-item-title class="menuAtivo">Trocar Conta</v-list-item-title>
           </v-list-item-content>
-        </v-list-item>   
-      </v-list>     
+        </v-list-item>
+      </v-list>
     </v-navigation-drawer>
     <v-content>
       <router-view></router-view>
     </v-content>
     <!--
-    <Footer/> -->
+    <Footer/>-->
   </div>
 </template>
 
 <script>
-import Footer from "../components/core/Footer"
-  export default {
-    components: {
-      Footer
-    },
-    props: {
-      source: String,
-    },
-    data: () => ({
-      drawer: null,
-      
-    }),
-  }
+import Footer from "../components/core/Footer";
+export default {
+  components: {
+    Footer
+  },
+  props: {
+    source: String
+  },
+  data: () => ({
+    drawer: null
+  })
+};
 </script>
 
 <style>
 #keep .v-navigation-drawer__border {
-  display: none
+  display: none;
 }
 
-  ::-webkit-scrollbar {
-    width: 2px;
-    border-radius: 10px;
-    background: #333
-  }
-  ::-webkit-scrollbar-thumb {
-    background: rgb(180, 179, 179);
-    border-radius: 10px;
-  }
+::-webkit-scrollbar {
+  width: 2px;
+  border-radius: 10px;
+  background: #333;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(180, 179, 179);
+  border-radius: 10px;
+}
 
 .menuAtivo {
   color: #ffffff;
@@ -213,5 +196,4 @@ import Footer from "../components/core/Footer"
   margin-right: 5px;
   font-weight: bold;
 }
-
 </style>

@@ -2,7 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 
 /* Views aqui */
-import Login from "./views/Login.vue"
+import Login from "./views/Login.vue";
 import Home from "./views/Home.vue";
 
 /* Componentes da Pasta Clientes*/
@@ -28,10 +28,22 @@ import CadastroPromocoes from "./components/Cadastros/Promocoes.vue";
 import CadastroBairros from "./components/Cadastros/Bairros.vue";
 
 /* Componente Controle de Estoque */
-import ControleEstoque from "./components/Estoque/ControleEstoque.vue";
+import ControleEstoque from "@/components/Estoque/ControleEstoque.vue";
 
 /* Componente Relatorio */
 import Relatorios from "./components/Relatorio/Relatorios.vue";
+
+//BAIRROS
+import ListarBairros from "@/components/Cadastros/bairros/Listar.vue";
+import CriarBairro from "@/components/Cadastros/bairros/Criar.vue";
+import EditarBairro from "@/components/Cadastros/bairros/Editar.vue";
+import ExcluirBairro from "@/components/Cadastros/bairros/Excluir.vue";
+
+//CLIENTES
+import ListarClientes from "@/components/Cadastros/clientes/Listar.vue";
+import CriarCliente from "@/components/Cadastros/clientes/Criar.vue";
+import EditarCliente from "@/components/Cadastros/clientes/Editar.vue";
+import ExcluirCliente from "@/components/Cadastros/clientes/Excluir.vue";
 
 Vue.use(Router);
 
@@ -47,6 +59,54 @@ export default new Router({
       name: "home",
       component: Home,
       children: [
+        //FLUXO_DE_BAIRROS
+        {
+          path: "/home/bairros/listar",
+          name: "listar bairros",
+          component: ListarBairros
+        },
+        {
+          path: "/home/bairros/criar",
+          name: "criar bairro",
+          component: CriarBairro,
+          props: true
+        },
+        {
+          path: "/home/bairros/editar/:id",
+          name: "editar bairro",
+          component: EditarBairro,
+          props: true
+        },
+        {
+          path: "/home/bairros/excluir/:id",
+          name: "excluir bairro",
+          component: ExcluirBairro
+        },
+        //FIM_FLUXO_DE_BAIRROS
+        //FLUXO_DE_CLIENTES
+        {
+          path: "/home/clientes/listar",
+          name: "listar clientes",
+          component: ListarClientes
+        },
+        {
+          path: "/home/clientes/criar",
+          name: "criar cliente",
+          component: CriarCliente,
+          props: true
+        },
+        {
+          path: "/home/clientes/editar/:id",
+          name: "editar cliente",
+          component: EditarCliente,
+          props: true
+        },
+        {
+          path: "/home/clientes/excluir/:id",
+          name: "excluir cliente",
+          component: ExcluirCliente
+        },
+        //FIM_FLUXO_DE_CLIENTE
         {
           path: "/home/cadastros",
           name: "cadastrados",
@@ -126,8 +186,7 @@ export default new Router({
           path: "/home/relatorios",
           name: "Relatorios",
           component: Relatorios
-        },
-
+        }
       ]
     }
   ]

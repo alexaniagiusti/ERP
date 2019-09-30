@@ -1,14 +1,13 @@
 <template>
-  <div>
-    <v-app id="keep">
-      <router-view></router-view>
-    </v-app>
-  </div>
+  <Listar title="Clientes"></Listar>
 </template>
 
 <script>
 export default {
   data() {
+    return {};
+  },
+  firebase() {
     return {};
   }
 };
