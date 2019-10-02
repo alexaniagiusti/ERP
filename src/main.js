@@ -8,9 +8,9 @@ import { rtdbPlugin } from "vuefire";
 import firebase from "firebase/app";
 import "firebase/database";
 import "firebase/auth";
-import Listar from "@/templates/Listar.vue";
-import Editar from "@/templates/Editar.vue";
-import Excluir from "@/templates/Excluir.vue";
+import Listar from "@/templates/cadastros/Listar.vue";
+import Editar from "@/templates/cadastros/Editar.vue";
+import Excluir from "@/templates/cadastros/Excluir.vue";
 
 const config = {
   apiKey: "AIzaSyBjFP7LihsrKjswi44jGF2Xa_Nhb3jK_20",
