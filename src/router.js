@@ -8,10 +8,13 @@ import Home from "./views/Home.vue";
 /* Componentes da Pasta Clientes*/
 import Cadastrados from "./components/Clientes/Cadastrados.vue";
 
-/* Componentes da Pasta Pedidos */
-import Mesa from "./components/Pedidos/Mesa.vue";
-import Comanda from "./components/Pedidos/Comanda.vue";
-import Motoboy from "./components/Pedidos/Motoboy.vue";
+/* Componete da Pasta Pedido para exibição de clientes cadastrados e cadastro de novo cliente */
+
+import CadastroGeral from "./components/Pedido/CadastroGeral.vue";
+
+/* Componentes da Pasta Comanda */
+import Mesa from "./components/Comanda/Mesa.vue";
+import Motoboy from "./components/Comanda/Motoboy.vue";
 
 /* Componentes da Pasta Caixa */
 import FluxoDeCaixa from "./components/Caixa/FluxoDeCaixa.vue";
@@ -59,6 +62,12 @@ export default new Router({
       name: "home",
       component: Home,
       children: [
+        // Pedido - Clientes Cadastrados
+        {
+          path: "/home/pedido/cadastrogeral",
+          name: "pedidos",
+          component: CadastroGeral
+        },
         //FLUXO_DE_BAIRROS
         {
           path: "/home/bairros/listar",
@@ -116,11 +125,6 @@ export default new Router({
           path: "/home/mesa",
           name: "Mesa",
           component: Mesa
-        },
-        {
-          path: "/home/comanda",
-          name: "Comanda",
-          component: Comanda
         },
         {
           path: "/home/motoboy",
