@@ -1,33 +1,20 @@
 <template>
   <div>
-    <v-app-bar app clipped-left dark>
+    <v-app-bar app clipped-left dark elevation="1">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <span class="title ml-3 mr-5">
+      <span class="hidden-sm-and-down title ml-3 mr-5">
         Wikilore&nbsp;
         <span class="font-weight-light">ERP</span>
       </span>
       <v-spacer></v-spacer>
       <v-text-field solo-inverted flat hide-details label="Pesquisar" prepend-inner-icon="search"></v-text-field>
       <v-spacer></v-spacer>
-      <span>Alexânia Giusti</span>
+      <span class="hidden-sm-and-down">Alexânia Giusti</span>
+      <v-icon class="hidden-sm-and-up">person</v-icon>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" app clipped width="300" dark>
       <v-list dense rounded>
-        <v-list-group prepend-icon="person" no-action>
-          <template v-slot:activator>
-            <v-list-item-content>
-              <v-list-item-title class="menuAtivo">Clientes</v-list-item-title>
-            </v-list-item-content>
-          </template>
-
-          <v-list-item to="/home/cadastros">
-            <v-list-item-content>
-              <v-list-item-title class="menuAtivo">Cadastrados</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-group>
-
         <v-list-group prepend-icon="fastfood" no-action>
           <template v-slot:activator>
             <v-list-item-content>
@@ -35,15 +22,23 @@
             </v-list-item-content>
           </template>
 
+          <v-list-item to="/home/pedido/cadastrogeral">
+            <v-list-item-content>
+              <v-list-item-title class="menuAtivo">Cadastros</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-group>
+
+        <v-list-group prepend-icon="store" no-action>
+          <template v-slot:activator>
+            <v-list-item-content>
+              <v-list-item-title class="menuAtivo">Comandas</v-list-item-title>
+            </v-list-item-content>
+          </template>
+
           <v-list-item to="/home/mesa">
             <v-list-item-content>
               <v-list-item-title class="menuAtivo">Controle de Mesas</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-list-item to="/home/comanda">
-            <v-list-item-content>
-              <v-list-item-title class="menuAtivo">Controle de Comandas</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
