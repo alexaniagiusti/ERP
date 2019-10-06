@@ -25,7 +25,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr v-for="item in controlemesa" :key="item.name">
+									<tr @click="ControleComanda" v-for="item in controlemesa" :key="item.name">
 										<td>{{ item.codigo }}</td>
 										<td>{{ item.mesa }}</td>
 										<td>{{ item.data }}</td>
@@ -162,5 +162,10 @@
         ],
       }
     },
+    methods: {
+      ControleComanda() {
+        this.$router.push('/home/controlecomanda')
+      }
+    }
   }
 </script>
