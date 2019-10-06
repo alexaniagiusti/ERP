@@ -15,6 +15,7 @@ import CadastroGeral from "./components/Pedido/CadastroGeral.vue";
 /* Componentes da Pasta Comanda */
 import Mesa from "./components/Comanda/Mesa.vue";
 import Motoboy from "./components/Comanda/Motoboy.vue";
+import ControleComanda from "./components/Comanda/ControleComanda";
 
 /* Componentes da Pasta Caixa */
 import FluxoDeCaixa from "./components/Caixa/FluxoDeCaixa.vue";
@@ -130,6 +131,11 @@ export default new Router({
           path: "/home/motoboy",
           name: "Motoboy",
           component: Motoboy
+        },
+        {
+          path: "/home/controlecomanda",
+          name: "ControleComanda",
+          component: ControleComanda
         },
         {
           path: "/home/fluxodecaixa",
