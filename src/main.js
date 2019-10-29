@@ -11,6 +11,7 @@ import "firebase/auth";
 import Listar from "@/templates/cadastros/Listar.vue";
 import Editar from "@/templates/cadastros/Editar.vue";
 import Excluir from "@/templates/cadastros/Excluir.vue";
+import axios from 'axios';
 
 const config = {
   apiKey: "AIzaSyBjFP7LihsrKjswi44jGF2Xa_Nhb3jK_20",
@@ -26,6 +27,7 @@ const app = firebase.initializeApp(config);
 
 Vue.prototype.$db = app.database();
 Vue.prototype.$auth = app.auth();
+Vue.prototype.$http = axios;
 
 Vue.use(rtdbPlugin);
 Vue.config.productionTip = false;

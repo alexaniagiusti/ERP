@@ -26,7 +26,7 @@ import ControlePosTef from "./components/Caixa/ControlePosTef.vue";
 import CadastroClientes from "./components/Cadastros/Clientes.vue";
 import CadastroColaboradores from "./components/Cadastros/Colaboradores.vue";
 import CadastroProdutos from "./components/Cadastros/Produtos.vue";
-import CadastroFornecedores from "./components/Cadastros/Fornecedores.vue";
+// import CadastroFornecedores from "./components/Cadastros/Fornecedores.vue";
 import CadastroConvenios from "./components/Cadastros/Convenios.vue";
 import CadastroPromocoes from "./components/Cadastros/Promocoes.vue";
 import CadastroBairros from "./components/Cadastros/Bairros.vue";
@@ -49,155 +49,153 @@ import CriarCliente from "@/components/Cadastros/clientes/Criar.vue";
 import EditarCliente from "@/components/Cadastros/clientes/Editar.vue";
 import ExcluirCliente from "@/components/Cadastros/clientes/Excluir.vue";
 
+import { fornecedoresRoutes } from '@/routes/Fornecedores'
+
 Vue.use(Router);
 
 export default new Router({
-  routes: [
-    {
-      path: "/",
-      name: "login",
-      component: Login
-    },
-    {
-      path: "/home",
-      name: "home",
-      component: Home,
-      children: [
-        // Pedido - Clientes Cadastrados
-        {
-          path: "/home/pedido/cadastrogeral",
-          name: "pedidos",
-          component: CadastroGeral
-        },
-        //FLUXO_DE_BAIRROS
-        {
-          path: "/home/bairros/listar",
-          name: "listar bairros",
-          component: ListarBairros
-        },
-        {
-          path: "/home/bairros/criar",
-          name: "criar bairro",
-          component: CriarBairro,
-          props: true
-        },
-        {
-          path: "/home/bairros/editar/:id",
-          name: "editar bairro",
-          component: EditarBairro,
-          props: true
-        },
-        {
-          path: "/home/bairros/excluir/:id",
-          name: "excluir bairro",
-          component: ExcluirBairro
-        },
-        //FIM_FLUXO_DE_BAIRROS
-        //FLUXO_DE_CLIENTES
-        {
-          path: "/home/clientes/listar",
-          name: "listar clientes",
-          component: ListarClientes
-        },
-        {
-          path: "/home/clientes/criar",
-          name: "criar cliente",
-          component: CriarCliente,
-          props: true
-        },
-        {
-          path: "/home/clientes/editar/:id",
-          name: "editar cliente",
-          component: EditarCliente,
-          props: true
-        },
-        {
-          path: "/home/clientes/excluir/:id",
-          name: "excluir cliente",
-          component: ExcluirCliente
-        },
-        //FIM_FLUXO_DE_CLIENTE
-        {
-          path: "/home/cadastros",
-          name: "cadastrados",
-          component: Cadastrados
-        },
-        {
-          path: "/home/mesa",
-          name: "Mesa",
-          component: Mesa
-        },
-        {
-          path: "/home/motoboy",
-          name: "Motoboy",
-          component: Motoboy
-        },
-        {
-          path: "/home/controlecomanda",
-          name: "ControleComanda",
-          component: ControleComanda
-        },
-        {
-          path: "/home/fluxodecaixa",
-          name: "FluxoDeCaixa",
-          component: FluxoDeCaixa
-        },
-        {
-          path: "/home/resumodecaixa",
-          name: "ResumoDeCaixa",
-          component: ResumoDeCaixa
-        },
-        {
-          path: "/home/controlepostef",
-          name: "ControlePosTef",
-          component: ControlePosTef
-        },
-        {
-          path: "/home/cadastroclientes",
-          name: "CadastroClientes",
-          component: CadastroClientes
-        },
-        {
-          path: "/home/cadastrocolaboradores",
-          name: "CadastroColaboradores",
-          component: CadastroColaboradores
-        },
-        {
-          path: "/home/cadastroprodutos",
-          name: "CadastroProdutos",
-          component: CadastroProdutos
-        },
-        {
-          path: "/home/cadastrofornecedores",
-          name: "CadastroFornecedores",
-          component: CadastroFornecedores
-        },
-        {
-          path: "/home/cadastroconvenios",
-          name: "CadastroConvenios",
-          component: CadastroConvenios
-        },
-        {
-          path: "/home/cadastropromocoes",
-          name: "CadastroPromocoes",
-          component: CadastroPromocoes
-        },
-        {
-          path: "/home/cadastrobairros",
-          name: "CadastroBairros",
-          component: CadastroBairros
-        },
-        {
-          path: "/home/controleestoque",
-          name: "ControleEstoque",
-          component: ControleEstoque
-        },
-        {
-          path: "/home/relatorios",
-          name: "Relatorios",
-          component: Relatorios
-        }
-      ]
-    }
-  ]
+	routes: [
+		{
+			path: "/",
+			name: "login",
+			component: Login
+		},
+		{
+			path: "/home",
+			name: "home",
+			component: Home,
+			children: [
+				// Pedido - Clientes Cadastrados
+				{
+					path: "/home/pedido/cadastrogeral",
+					name: "pedidos",
+					component: CadastroGeral
+				},
+				//FLUXO_DE_BAIRROS
+				{
+					path: "/home/bairros/listar",
+					name: "listar bairros",
+					component: ListarBairros
+				},
+				{
+					path: "/home/bairros/criar",
+					name: "criar bairro",
+					component: CriarBairro,
+					props: true
+				},
+				{
+					path: "/home/bairros/editar/:id",
+					name: "editar bairro",
+					component: EditarBairro,
+					props: true
+				},
+				{
+					path: "/home/bairros/excluir/:id",
+					name: "excluir bairro",
+					component: ExcluirBairro
+				},
+				//FIM_FLUXO_DE_BAIRROS
+				//FLUXO_DE_CLIENTES
+				{
+					path: "/home/clientes/listar",
+					name: "listar clientes",
+					component: ListarClientes
+				},
+				{
+					path: "/home/clientes/criar",
+					name: "criar cliente",
+					component: CriarCliente,
+					props: true
+				},
+				{
+					path: "/home/clientes/editar/:id",
+					name: "editar cliente",
+					component: EditarCliente,
+					props: true
+				},
+				{
+					path: "/home/clientes/excluir/:id",
+					name: "excluir cliente",
+					component: ExcluirCliente
+				},
+				//FIM_FLUXO_DE_CLIENTE
+				{
+					path: "/home/cadastros",
+					name: "cadastrados",
+					component: Cadastrados
+				},
+				{
+					path: "/home/mesa",
+					name: "Mesa",
+					component: Mesa
+				},
+				{
+					path: "/home/motoboy",
+					name: "Motoboy",
+					component: Motoboy
+				},
+				{
+					path: "/home/controlecomanda",
+					name: "ControleComanda",
+					component: ControleComanda
+				},
+				{
+					path: "/home/fluxodecaixa",
+					name: "FluxoDeCaixa",
+					component: FluxoDeCaixa
+				},
+				{
+					path: "/home/resumodecaixa",
+					name: "ResumoDeCaixa",
+					component: ResumoDeCaixa
+				},
+				{
+					path: "/home/controlepostef",
+					name: "ControlePosTef",
+					component: ControlePosTef
+				},
+				{
+					path: "/home/cadastroclientes",
+					name: "CadastroClientes",
+					component: CadastroClientes
+				},
+				{
+					path: "/home/cadastrocolaboradores",
+					name: "CadastroColaboradores",
+					component: CadastroColaboradores
+				},
+				{
+					path: "/home/cadastroprodutos",
+					name: "CadastroProdutos",
+					component: CadastroProdutos
+				},
+				{
+					path: "/home/cadastroconvenios",
+					name: "CadastroConvenios",
+					component: CadastroConvenios
+				},
+				{
+					path: "/home/cadastropromocoes",
+					name: "CadastroPromocoes",
+					component: CadastroPromocoes
+				},
+				{
+					path: "/home/cadastrobairros",
+					name: "CadastroBairros",
+					component: CadastroBairros
+				},
+				{
+					path: "/home/controleestoque",
+					name: "ControleEstoque",
+					component: ControleEstoque
+				},
+				{
+					path: "/home/relatorios",
+					name: "Relatorios",
+					component: Relatorios
+				},
+				...fornecedoresRoutes,
+			]
+		}
+	]
 });
