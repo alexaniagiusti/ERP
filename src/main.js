@@ -12,6 +12,10 @@ import Listar from "@/templates/cadastros/Listar.vue";
 import Editar from "@/templates/cadastros/Editar.vue";
 import Excluir from "@/templates/cadastros/Excluir.vue";
 import axios from 'axios';
+import VueTheMask from 'vue-the-mask'
+import VueToastr2 from 'vue-toastr-2'
+import 'vue-toastr-2/dist/vue-toastr-2.min.css'
+window.toastr = require('toastr');
 
 const config = {
   apiKey: "AIzaSyBjFP7LihsrKjswi44jGF2Xa_Nhb3jK_20",
@@ -30,6 +34,9 @@ Vue.prototype.$auth = app.auth();
 Vue.prototype.$http = axios;
 
 Vue.use(rtdbPlugin);
+Vue.use(VueToastr2);
+Vue.use(VueTheMask);
+
 Vue.config.productionTip = false;
 
 Vue.component("Listar", Listar);

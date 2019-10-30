@@ -50,6 +50,7 @@ import EditarCliente from "@/components/Cadastros/clientes/Editar.vue";
 import ExcluirCliente from "@/components/Cadastros/clientes/Excluir.vue";
 
 import { fornecedoresRoutes } from '@/routes/Fornecedores'
+import { clientesRoutes } from '@/routes/Clientes'
 
 Vue.use(Router);
 
@@ -195,6 +196,7 @@ export default new Router({
 					component: Relatorios
 				},
 				...fornecedoresRoutes,
+				...clientesRoutes,
 			]
 		}
 	]

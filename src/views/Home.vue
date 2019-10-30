@@ -80,7 +80,7 @@
             </v-list-item-content>
           </template>
 
-          <v-list-item to="/home/clientes/listar">
+          <v-list-item @click="$router.push({name: 'clientes'})">
             <v-list-item-content>
               <v-list-item-title class="menuAtivo">Clientes</v-list-item-title>
             </v-list-item-content>
