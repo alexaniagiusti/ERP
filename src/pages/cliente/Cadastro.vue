@@ -153,7 +153,6 @@
                 if(this.cliente.id){
                     Cliente.atualizar(this.cliente)
                     .then(res => {
-                        alert('cliente Atualizado.')
                         this.$toastr.success('Cadastro atualizado', 'Sucesso');
 
                     })
