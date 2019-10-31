@@ -76,8 +76,8 @@
                         <v-row>
                             <v-col cols="12" md="12">
                                 <v-btn color="success" @click="salvar">Salvar</v-btn>
-                                <v-btn v-if="cliente.id !== ''" color="primary" @click="cadastrar">Novo</v-btn>
-                                <v-btn v-if="cliente.id !== ''" color="error" @click.stop="modalExcluir = true">Excluir</v-btn>
+                                <v-btn v-if="$route.params.id" color="primary" @click="cadastrar">Novo</v-btn>
+                                <v-btn v-if="$route.params.id" color="error" @click.stop="modalExcluir = true">Excluir</v-btn>
                                 <v-btn class="white--text" color="blue-grey" @click="$router.push({'name': 'clientes'})">Voltar</v-btn>
                             </v-col>
                         </v-row>
@@ -174,8 +174,8 @@
                 .catch(err => console.log(err))
             },
             cadastrar(){
-                this.cliente = {}
                 this.$router.push({'name': 'clienteCadastro'})
+                this.cliente = {}
             },
             excluir(){
                 Cliente.excluir(this.cliente.id)

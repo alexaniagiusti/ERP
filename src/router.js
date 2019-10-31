@@ -51,6 +51,7 @@ import ExcluirCliente from "@/components/Cadastros/clientes/Excluir.vue";
 
 import { fornecedoresRoutes } from '@/routes/Fornecedores'
 import { clientesRoutes } from '@/routes/Clientes'
+import { produtosRoutes } from '@/routes/Produtos'
 
 Vue.use(Router);
 
@@ -197,6 +198,7 @@ export default new Router({
 				},
 				...fornecedoresRoutes,
 				...clientesRoutes,
+				...produtosRoutes,
 			]
 		}
 	]

@@ -67,8 +67,8 @@
                         <v-row>
                             <v-col cols="12" md="12">
                                 <v-btn color="success" @click="salvar">Salvar</v-btn>
-                                <v-btn v-if="fornecedor.id !== ''" color="primary" @click="cadastrar">Novo</v-btn>
-                                <v-btn v-if="fornecedor.id !== ''" color="error" @click.stop="modalExcluir = true">Excluir</v-btn>
+                                <v-btn v-if="$route.params.id" color="primary" @click="cadastrar">Novo</v-btn>
+                                <v-btn v-if="$route.params.id" color="error" @click.stop="modalExcluir = true">Excluir</v-btn>
                                 <v-btn class="white--text" color="blue-grey" @click="$router.push({'name': 'fornecedores'})">Voltar</v-btn>
                             </v-col>
                         </v-row>
@@ -145,7 +145,7 @@
                 if(this.fornecedor.id){
                     Fornecedor.atualizar(this.fornecedor)
                     .then(res => {
-                        alert('Fornecedor Atualizado.')
+                        this.$toastr.warning('Fornecedor atualizado.')
                         this.$toastr.success('Cadastro atualizado', 'Sucesso');
 
                     })
@@ -154,7 +154,7 @@
                     Fornecedor.salvar(this.fornecedor)
                     .then(res => {
                         this.fornecedor = {}
-                        this.$toastr.success('Cadastro efetuado', 'Sucesso');
+                        this.$toastr.success('Cadastro efetuado.', 'Sucesso');
                     })
                     .catch(err => console.log(err))
                 }
@@ -167,8 +167,8 @@
                 .catch(err => console.log(err))
             },
             cadastrar(){
-                this.fornecedor = {}
                 this.$router.push({'name': 'fornecedorCadastro'})
+                this.fornecedor = {}
             },
             excluir(){
                 Fornecedor.excluir(this.fornecedor.id)

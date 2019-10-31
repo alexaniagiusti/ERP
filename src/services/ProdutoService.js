@@ -4,14 +4,14 @@ export default {
     listar: () => {
         return http.get('/v1/produtos')
     },
-    salvar: (fornecedor) => {
-        return http.post('/v1/produtos', fornecedor)
+    salvar: (produto) => {
+        return http.post('/v1/produtos', produto)
     },
     editar: (id) => {
         return http.get(`/v1/produtos/${id}`)
     },
-    atualizar: (fornecedor) => {
-        return http.put(`/v1/produtos/${fornecedor.id}`, fornecedor)
+    atualizar: (produto) => {
+        return http.put(`/v1/produtos/${produto.id}`, produto)
     },
     excluir: (id) => {
         return http.delete(`/v1/produtos/${id}`)

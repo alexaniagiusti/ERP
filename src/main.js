@@ -13,6 +13,7 @@ import Editar from "@/templates/cadastros/Editar.vue";
 import Excluir from "@/templates/cadastros/Excluir.vue";
 import axios from 'axios';
 import VueTheMask from 'vue-the-mask'
+import Helper from './helper'
 import VueToastr2 from 'vue-toastr-2'
 import 'vue-toastr-2/dist/vue-toastr-2.min.css'
 window.toastr = require('toastr');
@@ -32,6 +33,7 @@ const app = firebase.initializeApp(config);
 Vue.prototype.$db = app.database();
 Vue.prototype.$auth = app.auth();
 Vue.prototype.$http = axios;
+Vue.prototype.$helper = new Helper();
 
 Vue.use(rtdbPlugin);
 Vue.use(VueToastr2);
