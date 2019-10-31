@@ -90,7 +90,7 @@
               <v-list-item-title class="menuAtivo">Colaboradores</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item to="/home/cadastroprodutos">
+          <v-list-item @click="$router.push({name: 'produtos'})">
             <v-list-item-content>
               <v-list-item-title class="menuAtivo">Produtos</v-list-item-title>
             </v-list-item-content>
