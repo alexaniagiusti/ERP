@@ -1,5 +1,6 @@
 <template>
   <div>
+    <VueLoad />
     <v-app-bar app clipped-left dark elevation="1">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <span class="hidden-sm-and-down title ml-3 mr-5">
@@ -85,11 +86,11 @@
               <v-list-item-title class="menuAtivo">Clientes</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item to="/home/cadastrocolaboradores">
+          <!-- <v-list-item to="/home/cadastrocolaboradores">
             <v-list-item-content>
               <v-list-item-title class="menuAtivo">Colaboradores</v-list-item-title>
             </v-list-item-content>
-          </v-list-item>
+          </v-list-item> -->
           <v-list-item @click="$router.push({name: 'produtos'})">
             <v-list-item-content>
               <v-list-item-title class="menuAtivo">Produtos</v-list-item-title>
@@ -100,7 +101,12 @@
               <v-list-item-title class="menuAtivo">Fornecedores</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item to="/home/cadastroconvenios">
+          <v-list-item @click="$router.push({'name': 'formasPagamentos'})">
+            <v-list-item-content>
+              <v-list-item-title class="menuAtivo">Formas de Pagamento</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <!-- <v-list-item to="/home/cadastroconvenios">
             <v-list-item-content>
               <v-list-item-title class="menuAtivo">Convênios</v-list-item-title>
             </v-list-item-content>
@@ -114,7 +120,7 @@
             <v-list-item-content>
               <v-list-item-title class="menuAtivo">Bairros</v-list-item-title>
             </v-list-item-content>
-          </v-list-item>
+          </v-list-item> -->
         </v-list-group>
 
         <v-list-item to="/home/controleestoque">
@@ -157,9 +163,11 @@
 
 <script>
 import Footer from "../components/core/Footer";
+import VueLoad from "../components/core/VueLoad";
 export default {
   components: {
-    Footer
+    Footer,
+    VueLoad,
   },
   props: {
     source: String
