@@ -97,16 +97,14 @@
                     <v-spacer></v-spacer>
                     
                     <v-btn
-                    color="green darken-1"
-                    text
+                    color="primary"
                     @click="modalExcluir = false"
                     >
                     NÃO
                 </v-btn>
                 
                 <v-btn
-                color="green darken-1"
-                text
+                color="error"
                 @click="excluir"
                 >
                 SIM
@@ -141,7 +139,7 @@
                 },
                 rules: {
                     nome: [
-                    v => !!v || 'Campo obrigatório.'
+                        v => !!v || 'Campo obrigatório.'
                     ],
                 },
                 modalExcluir: false
