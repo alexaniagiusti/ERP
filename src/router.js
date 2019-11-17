@@ -3,6 +3,9 @@ import Router from "vue-router";
 
 /* Views aqui */
 import Login from "./views/Login.vue";
+import RecoverPassword from '@/views/RecoverPassword.vue'
+import ResetPassword from '@/views/ResetPassword.vue'
+
 import Home from "./views/Home.vue";
 
 /* Componentes da Pasta Clientes*/
@@ -59,12 +62,23 @@ Vue.use(Router);
 export default new Router({
 	routes: [
 		{
-			path: "/",
+			path: "/login",
 			name: "login",
 			component: Login
 		},
 		{
-			path: "/home",
+			path: '/recuperar-senha',
+			name: 'recoverPassword',
+			component: RecoverPassword
+		},
+		{
+			path: '/reset-password/:token',
+			name: 'resetPassword',
+			component: ResetPassword,
+			props: true
+		},
+		{
+			path: "/",
 			name: "home",
 			component: Home,
 			children: [
