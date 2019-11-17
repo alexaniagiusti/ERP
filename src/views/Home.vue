@@ -145,10 +145,10 @@
 					</v-list-item-content>
 				</v-list-item>
 				
-				<v-list-item>
+				<v-list-item @click="logout">
 					<v-icon class="mr-5">crop_rotate</v-icon>
 					<v-list-item-content>
-						<v-list-item-title class="menuAtivo" @click="logout">Trocar Conta</v-list-item-title>
+						<v-list-item-title class="menuAtivo" >Trocar Conta</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
 			</v-list>
