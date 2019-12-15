@@ -33,7 +33,8 @@ const app = firebase.initializeApp(config);
 Vue.prototype.$db = app.database();
 Vue.prototype.$auth = app.auth();
 Vue.prototype.$http = axios;
-Vue.prototype.$urlApi = 'http://localhost:8080/api';
+// Vue.prototype.$urlApi = 'http://localhost:8080/api';
+Vue.prototype.$urlApi = 'https://erp-api-bruno.herokuapp.com/api';
 Vue.prototype.$helper = new Helper();
 
 Vue.use(rtdbPlugin);

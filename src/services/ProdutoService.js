@@ -15,5 +15,8 @@ export default {
     },
     excluir: (id) => {
         return http.delete(`/v1/produtos/${id}`)
-    }
+    },
+    porCodigoDeBarras: (codigoBarras) => {
+        return http.get(`/v1/produto/${codigoBarras}/codigo-barra`)
+    },
 }
